@@ -1,0 +1,13 @@
+.wrapper {
+    height: 100%;
+}
+
+.content {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin : 0 auto;
+}
