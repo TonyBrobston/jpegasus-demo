@@ -4,6 +4,7 @@
   "description": "This repo is the most simplistic implementation of Jpegasus hosted on GitHub Pages.",
   "main": "index.js",
   "scripts": {
+    "start": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +27,8 @@
   "homepage": "https://github.com/TonyBrobston/jpegasus-demo#readme",
   "dependencies": {},
   "devDependencies": {
-    "jpegasus": "^1.4.0"
+    "jpegasus": "^1.4.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
   }
 }
