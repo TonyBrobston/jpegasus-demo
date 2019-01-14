@@ -1507,9 +1507,10 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-jpegasus@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.4.0.tgz#39b9a1c3044a6550d50fa43d03c8e0afe54f84c0"
+jpegasus@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.4.3.tgz#d68a2b1dc53100139ce0bdd4f93907a871c84cc5"
+  integrity sha512-NGWxOWUaXatWr1qomya/RxoOZnFZ0dWKmN8WLrcicnBBQXfwTy8Mcuygx4IAy2ew/vFfFQqVbuqEUC/hR/zQ0g==
   dependencies:
     base64toblob "^0.0.2"
 
