@@ -1,6 +1,6 @@
 const Jpegasus = require('jpegasus');
 
-compress = async function(file) {
+compress = function(file) {
     console.log(file);
-    console.log(await Jpegasus.compress(file));
+    Jpegasus.compress(file).then((compressedFile) => console.log(compressedFile));
 };
