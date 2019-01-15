@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/tbrobston/.nvm/versions/node/v10.13.0/bin/node /usr/local/Cellar/yarn/1.12.3/libexec/bin/yarn.js add --dev preset-es2015 babel-preset-stage-0
+  /Users/tbrobston/.nvm/versions/node/v10.13.0/bin/node /usr/local/Cellar/yarn/1.12.3/libexec/bin/yarn.js add jpegasus-latest
 
 PATH: 
   /Users/tbrobston/.nvm/versions/node/v10.13.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/preset-es2015: Not found
+  Error: https://registry.yarnpkg.com/jpegasus-latest: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:65894:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:129018:22)
       at Request.emit (events.js:182:13)
@@ -33,7 +33,7 @@ npm manifest:
     "description": "This repo is the most simplistic implementation of Jpegasus hosted on GitHub Pages.",
     "main": "index.js",
     "scripts": {
-      "deploy": "gh-pages -d dist",
+      "deploy": "yarn build && gh-pages -d dist",
       "build": "rm -rf dist && webpack",
       "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -55,14 +55,11 @@ npm manifest:
       "url": "https://github.com/TonyBrobston/jpegasus-demo/issues"
     },
     "homepage": "https://github.com/TonyBrobston/jpegasus-demo#readme",
-    "dependencies": {
-      "babel-core": "^6.26.3",
-      "babel-polyfill": "^6.26.0"
-    },
+    "dependencies": {},
     "devDependencies": {
       "copy-webpack-plugin": "^4.6.0",
       "gh-pages": "^2.0.1",
-      "jpegasus": "^1.4.9",
+      "jpegasus": "^1.6.0",
       "webpack": "^4.28.3",
       "webpack-cli": "^3.2.0"
     }
@@ -1125,6 +1122,11 @@ Lockfile:
       signal-exit "^3.0.0"
       strip-eof "^1.0.0"
   
+  exif-js@^2.3.0:
+    version "2.3.0"
+    resolved "https://registry.yarnpkg.com/exif-js/-/exif-js-2.3.0.tgz#9d10819bf571f873813e7640241255ab9ce1a814"
+    integrity sha1-nRCBm/Vx+HOBPnZAJBJVq5zhqBQ=
+  
   expand-brackets@^2.1.4:
     version "2.1.4"
     resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-2.1.4.tgz#b77735e315ce30f6b6eff0f83b04151a22449622"
@@ -1758,14 +1760,15 @@ Lockfile:
     version "3.0.1"
     resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   
-  jpegasus@^1.4.9:
-    version "1.4.9"
-    resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.4.9.tgz#6c6c85abb83a9b8953580abb37e93f28eb19844c"
-    integrity sha512-sGK+bp+qShp0U6ac+cASrQbWXac9wgwd/nyv9yuQ9lyvhY2K5+wzQhS3rjsgCmtfhQWD+z6DakSkMbYIvfdH6Q==
+  jpegasus@^1.6.0:
+    version "1.6.0"
+    resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.6.0.tgz#49325b327f434677ca28789bb8a09cd090d24495"
+    integrity sha512-7aisvQvf9FL3Y8cqQgcQ5T/p4h8agyroHWl702I7lQYJfUk+c22SsiBHSCqZasCJL2+XXs7ymwCVYi4/cKgmsg==
     dependencies:
       babel-core "^6.26.3"
       babel-polyfill "^6.26.0"
       base64toblob "^0.0.2"
+      exif-js "^2.3.0"
   
   "js-tokens@^3.0.0 || ^4.0.0":
     version "4.0.0"
