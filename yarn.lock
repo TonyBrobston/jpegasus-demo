@@ -1051,6 +1051,11 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+exif-js@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/exif-js/-/exif-js-2.3.0.tgz#9d10819bf571f873813e7640241255ab9ce1a814"
+  integrity sha1-nRCBm/Vx+HOBPnZAJBJVq5zhqBQ=
+
 expand-brackets@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-2.1.4.tgz#b77735e315ce30f6b6eff0f83b04151a22449622"
@@ -1684,14 +1689,15 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-jpegasus@^1.4.10:
-  version "1.4.10"
-  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.4.10.tgz#4b0fd99c953bd0cb053dbd43869b93f1a7eba57f"
-  integrity sha512-4850gv2wG1ire5g49Ue+Bm2tXLLs+86WTcnjDl3F8WqRT8+4jC7nCpqC3SPVZYhtqsTQwz3I1X4u6l+z5++RKQ==
+jpegasus@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.6.0.tgz#49325b327f434677ca28789bb8a09cd090d24495"
+  integrity sha512-7aisvQvf9FL3Y8cqQgcQ5T/p4h8agyroHWl702I7lQYJfUk+c22SsiBHSCqZasCJL2+XXs7ymwCVYi4/cKgmsg==
   dependencies:
     babel-core "^6.26.3"
     babel-polyfill "^6.26.0"
     base64toblob "^0.0.2"
+    exif-js "^2.3.0"
 
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
