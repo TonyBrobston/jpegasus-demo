@@ -1,7 +1,11 @@
+const Jpegasus = require('Jpegasus');
 
 compress = function(file) {
-    console.log(file);
-    require('jpegasus').compress(file).then(function (compressedFile) {
-        console.log(compressedFile);
+    document.getElementById('originalDetails').innerHTML = `{size: ${file.size}, type: ${file.type}}`;
+    Jpegasus.compress(file, {
+        maxHeight: 1000
+    }).then(function (compressedFile) {
+        document.getElementById('compressedDetails').innerHTML = `{size: ${compressedFile.size}, type: ${compressedFile.type}}`;
+        document.getElementById('compressedImg').src = URL.createObjectURL(compressedFile);
     });
 };
