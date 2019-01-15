@@ -4,7 +4,7 @@
   "description": "This repo is the most simplistic implementation of Jpegasus hosted on GitHub Pages.",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d dist",
+    "deploy": "yarn build && gh-pages -d dist",
     "build": "rm -rf dist && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
