@@ -1684,10 +1684,10 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-jpegasus@^1.4.9:
-  version "1.4.9"
-  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.4.9.tgz#6c6c85abb83a9b8953580abb37e93f28eb19844c"
-  integrity sha512-sGK+bp+qShp0U6ac+cASrQbWXac9wgwd/nyv9yuQ9lyvhY2K5+wzQhS3rjsgCmtfhQWD+z6DakSkMbYIvfdH6Q==
+jpegasus@^1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.4.10.tgz#4b0fd99c953bd0cb053dbd43869b93f1a7eba57f"
+  integrity sha512-4850gv2wG1ire5g49Ue+Bm2tXLLs+86WTcnjDl3F8WqRT8+4jC7nCpqC3SPVZYhtqsTQwz3I1X4u6l+z5++RKQ==
   dependencies:
     babel-core "^6.26.3"
     babel-polyfill "^6.26.0"
