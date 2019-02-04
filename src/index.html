@@ -10,7 +10,7 @@
         <div class="content">
             <h1>Jpegasus Demo</h1>
             <select id="qualitySelector"></select><br />
-            <input type="file" onchange="compress(event.target.files[0])" onclick="this.value = null">
+            <input type="file" onchange="compressAndReportResults(event.target.files[0])" onclick="this.value = null">
         </div>
         <pre>
             <code id="originalDetails"></code>

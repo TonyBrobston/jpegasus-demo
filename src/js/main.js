@@ -1,23 +1,19 @@
-const Jpegasus = require('Jpegasus');
+const compressionHelper = require('./compressionHelper');
 
-compress = function(file) {
+compressAndReportResults = async (file) => {
     if (file) {
         document.getElementById('originalDetails').innerHTML = `{size: ${file.size}, type: ${file.type}}`;
 
-        const quality = document.getElementById('qualitySelector').value;
+        const quality = parseFloat(document.getElementById('qualitySelector').value);
 
-        Jpegasus.compress(file, {
-            maxHeight: 1000,
-            maxWidth: 1000,
-            quality: parseFloat(quality)
-        }).then(function (compressedFile) {
-            document.getElementById('compressedDetails').innerHTML = `{size: ${compressedFile.size}, type: ${compressedFile.type}}`;
-            document.getElementById('compressedImg').src = URL.createObjectURL(compressedFile);
-        });
+        const compressedFile = await compressionHelper.compress(file, quality);
+
+        document.getElementById('compressedDetails').innerHTML = `{size: ${compressedFile.size}, type: ${compressedFile.type}}`;
+        document.getElementById('compressedImg').src = URL.createObjectURL(compressedFile);
     }
 };
 
-fillQualitySelectorOptions = function() {
+fillQualitySelectorOptions = () => {
     const minimumQuality = 1;
     const maxQuality = 100;
     const qualitySelector = document.getElementById('qualitySelector');
@@ -33,6 +29,6 @@ fillQualitySelectorOptions = function() {
     }
 };
 
-window.onload = function() {
+window.onload = () => {
     fillQualitySelectorOptions();
 };
