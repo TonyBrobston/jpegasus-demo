@@ -9,7 +9,9 @@
     <div class="wrapper">
         <div class="content">
             <h1>Jpegasus Demo</h1>
-            <select id="qualitySelector"></select><br />
+            maxHeight: <select id="maxHeightSelector"></select><br />
+            maxWidth: <select id="maxWidthSelector"></select><br />
+            quality: <select id="qualitySelector"></select><br />
             <input type="file" onchange="compressAndReportResults(event.target.files[0])" onclick="this.value = null">
         </div>
         <pre>
@@ -18,7 +20,7 @@
         <pre>
             <code id="compressedDetails"></code>
         </pre>
-        <img id="compressedImg"  src="" />
+        <img id="compressedImage"  src="" />
     </div>
     <link rel="stylesheet" href="css/index.css">
 </body>
