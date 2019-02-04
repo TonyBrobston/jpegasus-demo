@@ -1,7 +1,7 @@
-const Jpegasus = require('Jpegasus');
+const jpegasus = require('Jpegasus');
 
 const compress = (file, quality) => {
-    return Jpegasus.compress(file, {
+    return jpegasus.compress(file, {
         maxHeight: 1000,
         maxWidth: 1000,
         quality
