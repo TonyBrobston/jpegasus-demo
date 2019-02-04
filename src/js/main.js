@@ -2,33 +2,86 @@ const compressionHelper = require('./compressionHelper');
 
 compressAndReportResults = async (file) => {
     if (file) {
-        document.getElementById('originalDetails').innerHTML = `{size: ${file.size}, type: ${file.type}}`;
+        setOriginalDetails(`{size: ${file.size}, type: ${file.type}}`);
+        const maxHeight = parseFloat(getValue('maxHeightSelector'));
+        const maxWidth = parseFloat(getValue('maxWidthSelector'));
+        const quality = parseFloat(getValue('qualitySelector'));
 
-        const quality = parseFloat(document.getElementById('qualitySelector').value);
+        const compressedFile = await compressionHelper.compress(file, maxHeight, maxWidth, quality);
 
-        const compressedFile = await compressionHelper.compress(file, quality);
-
-        document.getElementById('compressedDetails').innerHTML = `{size: ${compressedFile.size}, type: ${compressedFile.type}}`;
-        document.getElementById('compressedImg').src = URL.createObjectURL(compressedFile);
+        setCompressedDetails(`{size: ${compressedFile.size}, type: ${compressedFile.type}}`);
+        setFileObjectUrl(compressedFile);
     }
+};
+
+setOriginalDetails = (originalDetails) => {
+    document.getElementById('originalDetails').innerHTML = originalDetails;
+};
+
+setCompressedDetails = (compressedDetails) => {
+    document.getElementById('compressedDetails').innerHTML = compressedDetails;
+};
+
+setFileObjectUrl = (compressedFile) => {
+    document.getElementById('compressedImage').src = URL.createObjectURL(compressedFile);
+};
+
+getValue = (field) => {
+    return document.getElementById(field).value
+};
+
+const fillMaxHeightSelectorOptions = () => {
+    const maxHeightSelector = document.getElementById('maxHeightSelector');
+
+    fillSelectorOptionsAndSetDefault(maxHeightSelector, {
+        decreaseBy: 100,
+        defaultValue: 1000,
+        divideBy: 1,
+        maximum: 10000,
+        minimum: 1
+    });
+};
+
+const fillMaxWidthSelectorOptions = () => {
+    const maxHeightSelector = document.getElementById('maxWidthSelector');
+
+    fillSelectorOptionsAndSetDefault(maxHeightSelector, {
+        decreaseBy: 100,
+        defaultValue: 1000,
+        divideBy: 1,
+        maximum: 10000,
+        minimum: 1
+    });
 };
 
 const fillQualitySelectorOptions = () => {
-    const minimumQuality = 1;
-    const maxQuality = 100;
     const qualitySelector = document.getElementById('qualitySelector');
 
-    for (let i = maxQuality; i >= minimumQuality; i--) {
+    fillSelectorOptionsAndSetDefault(qualitySelector, {
+        decreaseBy: 1,
+        defaultValue: 1,
+        divideBy: 100,
+        maximum: 100,
+        minimum: 1
+    });
+};
+
+const fillSelectorOptionsAndSetDefault = (selector, {decreaseBy, divideBy, minimum, maximum, defaultValue}) => {
+    for (let iterator = maximum; iterator >= minimum; iterator = iterator - decreaseBy) {
         const option = document.createElement('option');
-        const quality = parseFloat(i / 100).toFixed(2);
+        const value = parseFloat(iterator / divideBy);
 
-        option.text = quality;
-        option.value = quality;
+        option.text = value;
+        option.value = value;
 
-        qualitySelector.appendChild(option);
+        selector.appendChild(option);
     }
+
+    selector.value = defaultValue;
 };
 
 window.onload = () => {
+    fillMaxHeightSelectorOptions();
+    fillMaxWidthSelectorOptions();
     fillQualitySelectorOptions();
 };
