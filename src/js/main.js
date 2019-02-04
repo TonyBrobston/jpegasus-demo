@@ -2,14 +2,17 @@ const compressionHelper = require('./compressionHelper');
 
 compressAndReportResults = async (file) => {
     if (file) {
-        setOriginalDetails(`{size: ${file.size}, type: ${file.type}}`);
+        setOriginalDetails(`{size: ${file.size} bytes, type: ${file.type}}`);
         const maxHeight = parseFloat(getValue('maxHeightSelector'));
         const maxWidth = parseFloat(getValue('maxWidthSelector'));
         const quality = parseFloat(getValue('qualitySelector'));
+        const start = new Date().getTime();
 
         const compressedFile = await compressionHelper.compress(file, maxHeight, maxWidth, quality);
 
-        setCompressedDetails(`{size: ${compressedFile.size}, type: ${compressedFile.type}}`);
+        const end = new Date().getTime();
+        const runTime = (end - start);
+        setCompressedDetails(`{size: ${compressedFile.size} bytes, runTime: ${runTime} milliseconds, type: ${compressedFile.type}}`);
         setFileObjectUrl(compressedFile);
     }
 };
