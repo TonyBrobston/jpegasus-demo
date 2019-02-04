@@ -17,7 +17,7 @@ compress = function(file) {
     }
 };
 
-window.onload = function() {
+fillQualitySelectorOptions = function() {
     const minimumQuality = 1;
     const maxQuality = 100;
     const qualitySelector = document.getElementById('qualitySelector');
@@ -31,4 +31,8 @@ window.onload = function() {
 
         qualitySelector.appendChild(option);
     }
+};
+
+window.onload = function() {
+    fillQualitySelectorOptions();
 };
