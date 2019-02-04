@@ -13,7 +13,7 @@ compressAndReportResults = async (file) => {
     }
 };
 
-fillQualitySelectorOptions = () => {
+const fillQualitySelectorOptions = () => {
     const minimumQuality = 1;
     const maxQuality = 100;
     const qualitySelector = document.getElementById('qualitySelector');
