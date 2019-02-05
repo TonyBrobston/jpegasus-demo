@@ -21,19 +21,19 @@ compressAndReportResults = async (file) => {
     }
 };
 
-setOriginalDetails = (originalDetails) => {
+const setOriginalDetails = (originalDetails) => {
     document.getElementById('originalDetails').innerHTML = originalDetails;
 };
 
-setCompressedDetails = (compressedDetails) => {
+const setCompressedDetails = (compressedDetails) => {
     document.getElementById('compressedDetails').innerHTML = compressedDetails;
 };
 
-setFileObjectUrl = (compressedFile) => {
+const setFileObjectUrl = (compressedFile) => {
     document.getElementById('compressedImage').src = URL.createObjectURL(compressedFile);
 };
 
-getValue = (field) => {
+const getValue = (field) => {
     return document.getElementById(field).value
 };
 
