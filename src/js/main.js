@@ -1,4 +1,4 @@
-const compressionHelper = require('./compressionHelper');
+const jpegasus = require('jpegasus');
 
 compressAndReportResults = async (file) => {
     if (file) {
@@ -8,7 +8,11 @@ compressAndReportResults = async (file) => {
         const quality = parseFloat(getValue('qualitySelector'));
         const start = new Date().getTime();
 
-        const compressedFile = await compressionHelper.compress(file, maxHeight, maxWidth, quality);
+        const compressedFile = await jpegasus.compress(file, {
+            maxHeight,
+            maxWidth,
+            quality
+        });
 
         const end = new Date().getTime();
         const runTime = (end - start);
