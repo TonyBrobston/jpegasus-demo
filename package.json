@@ -31,7 +31,7 @@
     "copy-webpack-plugin": "^4.6.0",
     "es6-promise-promise": "^1.0.0",
     "gh-pages": "^2.0.1",
-    "jpegasus": "^1.7.6",
+    "jpegasus": "^1.8.0",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.0"
   }
