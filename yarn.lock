@@ -1491,16 +1491,9 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-<<<<<<< HEAD
 jpegasus@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.8.1.tgz#c5bc41d219558faf3df9fce03baf05af13abd372"
-=======
-jpegasus@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.8.0.tgz#2bb8df82a5cdba95dd9e952a19883a2c175bba7d"
-  integrity sha512-PZiPGI5vAcouTs5JlHLML3fx+AFRoOWXPeAoilh08XDdlgBelAOYmw7HwQjZ0YbzRSj1ekwXANygit7ZPqo8ew==
->>>>>>> 17c1656e138fb90b6ed85b48adab3a5c36c4014d
   dependencies:
     base64toblob "^0.0.2"
     exif-js "^2.3.0"
