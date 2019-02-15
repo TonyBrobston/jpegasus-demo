@@ -30,7 +30,11 @@
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",
     "gh-pages": "^2.0.1",
+<<<<<<< HEAD
     "jpegasus": "^1.8.1",
+=======
+    "jpegasus": "^1.8.0",
+>>>>>>> 17c1656e138fb90b6ed85b48adab3a5c36c4014d
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.0"
   }
