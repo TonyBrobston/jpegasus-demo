@@ -16,6 +16,10 @@ module.exports = {
             {
                 from: 'src/css/styles.css',
                 to: './css'
+            },
+            {
+                from: 'src/img/',
+                to: './img'
             }
         ])
     ]
