@@ -1,12 +1,15 @@
 const jpegasus = require('jpegasus');
 
-compressAndReportResults = async (file) => {
+compressAndReportResults = async (event) => {
+    event.preventDefault();
+
+    const file = document.getElementById('imageInput').files[0];
+
     if (file) {
-        setOriginalDetails(`{size: ${file.size} bytes, type: ${file.type}}`);
+        setOriginalDetails(file);
         const maxHeight = parseFloat(getValue('maxHeightSelector'));
         const maxWidth = parseFloat(getValue('maxWidthSelector'));
         const quality = parseFloat(getValue('qualitySelector'));
-        const start = new Date().getTime();
 
         const compressedFile = await jpegasus.compress(file, {
             maxHeight,
@@ -14,23 +17,24 @@ compressAndReportResults = async (file) => {
             quality
         });
 
-        const end = new Date().getTime();
-        const runTime = (end - start);
-        setCompressedDetails(`{size: ${compressedFile.size} bytes, runTime: ${runTime} milliseconds, type: ${compressedFile.type}}`);
+        setCompressedDetails(compressedFile);
         setFileObjectUrl(compressedFile);
     }
 };
 
-const setOriginalDetails = (originalDetails) => {
-    document.getElementById('originalDetails').innerHTML = originalDetails;
+const setOriginalDetails = (file) => {
+    document.getElementById('originalSize').innerHTML = (file.size / 1024).toFixed(2);
+    document.getElementById('originType').innerHTML = file.type;
 };
 
-const setCompressedDetails = (compressedDetails) => {
-    document.getElementById('compressedDetails').innerHTML = compressedDetails;
+const setCompressedDetails = (file) => {
+    document.getElementById('compressedSize').innerHTML = (file.size / 1024).toFixed(2);
+    document.getElementById('compressedType').innerHTML = file.type;
 };
 
 const setFileObjectUrl = (compressedFile) => {
-    document.getElementById('compressedImage').src = URL.createObjectURL(compressedFile);
+    const compressedImageSource = URL.createObjectURL(compressedFile);
+    document.getElementById('compressedImageSpan').innerHTML = `<img id="compressedImage" src="${compressedImageSource}" />`;
 };
 
 const getValue = (field) => {
