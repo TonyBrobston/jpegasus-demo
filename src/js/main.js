@@ -1,8 +1,6 @@
 const jpegasus = require('jpegasus');
 
-compressAndReportResults = async (event) => {
-    event.preventDefault();
-
+compressAndReportResults = async () => {
     const file = document.getElementById('imageInput').files[0];
 
     if (file) {
