@@ -17,7 +17,7 @@
 				<h1>
 					<img alt="JPEGasus logo" src="img/jpegasus-logo-reversed.png" />
 				</h1>
-				<form>
+				<form onsubmit="compressAndReportResults(event)">
 					<label>
 						<strong>Max Height</strong>
 						<select id="maxHeightSelector"></select>
@@ -34,7 +34,7 @@
 						<strong>Upload Image</strong>
 						<input type="file" id="imageInput" />
 					</label>
-					<input type="button" value="Submit" onclick="compressAndReportResults()" />
+					<input type="submit" value="Submit" />
 					<table>
 						<thead>
 							<tr>

@@ -91,7 +91,7 @@ header select {
 	display: block;
 	width: 100%;
 }
-header input[type="button"]{
+header input[type="submit"]{
 	background-color: #2a66ff;
 	border: 1px solid #2a66ff;
 	border-radius: 4px;
@@ -108,7 +108,7 @@ header input[type="button"]{
 	transition: all ease .25s;
 	width: 100%;
 }
-header input[type="button"]:hover{
+header input[type="submit"]:hover{
 	cursor: pointer;
 	background-color: #255be6;
 }
