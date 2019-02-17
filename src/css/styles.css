@@ -149,12 +149,13 @@ main img {
 		height: 100%;
 		position: relative;
 	}
+	.wrapper {
+		display: table;
+		width: 100%;
+	}
 	header {
 		display: table-cell;
 		width: 280px;
-	}
-	.wrapper {
-		display: table;
 	}
 	.container {
 		display: table-row;
@@ -163,5 +164,6 @@ main img {
 		display: table-cell;
 		padding: 0;
 		vertical-align: middle;
+/*		width: 100%;*/
 	}
 }
