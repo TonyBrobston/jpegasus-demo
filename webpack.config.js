@@ -14,7 +14,7 @@ module.exports = {
                 to: '.'
             },
             {
-                from: 'src/css/index.css',
+                from: 'src/css/styles.css',
                 to: './css'
             }
         ])
