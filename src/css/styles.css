@@ -135,7 +135,7 @@ main figure {
 	overflow: auto;
 	width: 100%;
 }
-main img {
+main span {
 	display: block;
 	font-size: 18px;
 	margin: 0 auto;

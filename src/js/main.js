@@ -10,7 +10,6 @@ compressAndReportResults = async (event) => {
         const maxHeight = parseFloat(getValue('maxHeightSelector'));
         const maxWidth = parseFloat(getValue('maxWidthSelector'));
         const quality = parseFloat(getValue('qualitySelector'));
-        // const start = new Date().getTime();
 
         const compressedFile = await jpegasus.compress(file, {
             maxHeight,
@@ -18,8 +17,6 @@ compressAndReportResults = async (event) => {
             quality
         });
 
-        // const end = new Date().getTime();
-        // const runTime = (end - start);
         setCompressedDetails(compressedFile);
         setFileObjectUrl(compressedFile);
     }
@@ -36,7 +33,8 @@ const setCompressedDetails = (file) => {
 };
 
 const setFileObjectUrl = (compressedFile) => {
-    document.getElementById('compressedImage').src = URL.createObjectURL(compressedFile);
+    const compressedImageSource = URL.createObjectURL(compressedFile);
+    document.getElementById('compressedImageSpan').innerHTML = `<img id="compressedImage" src="${compressedImageSource}" />`;
 };
 
 const getValue = (field) => {
