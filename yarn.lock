@@ -893,10 +893,6 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-exif-js@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/exif-js/-/exif-js-2.3.0.tgz#9d10819bf571f873813e7640241255ab9ce1a814"
-
 expand-brackets@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-2.1.4.tgz#b77735e315ce30f6b6eff0f83b04151a22449622"
@@ -1491,12 +1487,11 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-jpegasus@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.9.1.tgz#6f6ecf1e564f12dcabcf0d2432723235bfb4769c"
+jpegasus@^1.9.21:
+  version "1.9.21"
+  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.9.21.tgz#c087adfd2ff2b09df42ff65ba33703cbd2654759"
   dependencies:
     base64toblob "^0.0.2"
-    exif-js "^2.3.0"
 
 json-parse-better-errors@^1.0.2:
   version "1.0.2"
