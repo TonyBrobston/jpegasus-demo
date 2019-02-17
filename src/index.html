@@ -32,9 +32,9 @@
 					</label>
 					<label>
 						<strong>Upload Image</strong>
-						<input type="file" onchange="compressAndReportResults(event.target.files[0])" onclick="this.value = null">
+						<input type="file" id="imageInput" />
 					</label>
-					<input type="submit" value="Submit" />
+					<input type="button" value="Submit" onclick="compressAndReportResults()" />
 <!--
 	Replace <pre> code and put data into table
 	Only render table after form submission
