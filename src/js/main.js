@@ -3,36 +3,34 @@ const jpegasus = require('jpegasus');
 compressAndReportResults = async () => {
     const file = document.getElementById('imageInput').files[0];
 
-    console.log(file);
+    if (file) {
+        setOriginalDetails(file);
+        const maxHeight = parseFloat(getValue('maxHeightSelector'));
+        const maxWidth = parseFloat(getValue('maxWidthSelector'));
+        const quality = parseFloat(getValue('qualitySelector'));
+        // const start = new Date().getTime();
 
-    // if (file) {
-    //     setOriginalDetails(`{size: ${file.size} bytes, type: ${file.type}}`);
-    //     const maxHeight = parseFloat(getValue('maxHeightSelector'));
-    //     const maxWidth = parseFloat(getValue('maxWidthSelector'));
-    //     const quality = parseFloat(getValue('qualitySelector'));
-    //     const start = new Date().getTime();
-    //
-    //     const compressedFile = await jpegasus.compress(file, {
-    //         maxHeight,
-    //         maxWidth,
-    //         quality
-    //     });
-    //
-    //     const end = new Date().getTime();
-    //     const runTime = (end - start);
-    //     setCompressedDetails(`{size: ${compressedFile.size} bytes, runTime: ${runTime} milliseconds, type: ${compressedFile.type}}`);
-    //     setFileObjectUrl(compressedFile);
-    // }
+        const compressedFile = await jpegasus.compress(file, {
+            maxHeight,
+            maxWidth,
+            quality
+        });
 
-    return false;
+        // const end = new Date().getTime();
+        // const runTime = (end - start);
+        setCompressedDetails(compressedFile);
+        setFileObjectUrl(compressedFile);
+    }
 };
 
-const setOriginalDetails = (originalDetails) => {
-    document.getElementById('originalDetails').innerHTML = originalDetails;
+const setOriginalDetails = (file) => {
+    document.getElementById('originalSize').innerHTML = (file.size / 1024).toFixed(2);
+    document.getElementById('originType').innerHTML = file.type;
 };
 
-const setCompressedDetails = (compressedDetails) => {
-    document.getElementById('compressedDetails').innerHTML = compressedDetails;
+const setCompressedDetails = (file) => {
+    document.getElementById('compressedSize').innerHTML = (file.size / 1024).toFixed(2);
+    document.getElementById('compressedType').innerHTML = file.type;
 };
 
 const setFileObjectUrl = (compressedFile) => {
