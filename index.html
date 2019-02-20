@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="description" content="A client-side JavaScript tool that takes in a file of type .jpeg, .png, or .gif and returns a compressed Blob of type .jpeg." />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="manifest" href="manifest.json">
+	<title>Jpegasus Demo</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<header>
+				<h1>
+					<img alt="JPEGasus logo" src="img/jpegasus-logo-reversed.png" />
+				</h1>
+				<form>
+					<label>
+						<strong>Max Height</strong>
+						<select id="maxHeightSelector"></select>
+					</label>
+					<label>
+						<strong>Max Width</strong>
+						<select id="maxWidthSelector"></select>
+					</label>
+					<label>
+						<strong>Quality</strong>
+						<select id="qualitySelector"></select>
+					</label>
+					<label>
+						<strong>Upload Image</strong>
+						<input type="file" id="imageInput" />
+					</label>
+					<input type="button" value="Submit" onclick="compressAndReportResults()" />
+					<table>
+						<thead>
+							<tr>
+								<th>&nbsp;</th>
+								<th>Size (kb)</th>
+								<th>Type</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Original</strong></td>
+								<td id="originalSize">—</td>
+								<td id="originType">—</td>
+							</tr>
+							<tr>
+								<td><strong>JPEGasus</strong></td>
+								<td id="compressedSize">—</td>
+								<td id="compressedType">—</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</header>
+			<main role="main">
+				<span id="compressedImageSpan">
+					Please upload an image to see a preview here
+				</span>
+			</main>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
+</body>
+</html>
