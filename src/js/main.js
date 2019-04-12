@@ -5,18 +5,23 @@ compressAndReportResults = async () => {
 
     if (file) {
         setOriginalDetails(file);
-        const maxHeight = parseFloat(getValue('maxHeightSelector'));
-        const maxWidth = parseFloat(getValue('maxWidthSelector'));
-        const quality = parseFloat(getValue('qualitySelector'));
 
-        const compressedFile = await jpegasus.compress(file, {
-            maxHeight,
-            maxWidth,
-            quality
-        });
+        console.log('test');
+        let outputs = '';
+        for (let iterator = 1; iterator <= 100; iterator++) {
+            const quality = iterator / 100;
+            const compressedFile = await jpegasus.compress(file, {
+                quality
+            });
+            const compressedQuality = compressedFile.size / file.size;
+            const output = `${quality}, ${compressedQuality}\n`;
+            console.log(output);
+            outputs += output;
+        }
+        console.log(outputs);
 
-        setCompressedDetails(compressedFile);
-        setFileObjectUrl(compressedFile);
+        // setCompressedDetails(compressedFile);
+        // setFileObjectUrl(compressedFile);
     }
 };
 
@@ -68,7 +73,7 @@ const fillQualitySelectorOptions = () => {
 
     fillSelectorOptionsAndSetDefault(qualitySelector, {
         decreaseBy: 1,
-        defaultValue: 1,
+        defaultValue: 0.5,
         divideBy: 100,
         maximum: 100,
         minimum: 1
