@@ -6,15 +6,14 @@ compressAndReportResults = async () => {
     if (file) {
         setOriginalDetails(file);
 
-        console.log('test');
         let outputs = '';
         for (let iterator = 1; iterator <= 100; iterator++) {
             const quality = iterator / 100;
             const compressedFile = await jpegasus.compress(file, {
                 quality
             });
-            const compressedQuality = compressedFile.size / file.size;
-            const output = `${quality}, ${compressedQuality}\n`;
+            const compressedQuality = Math.round(compressedFile.size / file.size);
+            const output = `${quality}, ${compressedQuality}, ${file.size}\n`;
             console.log(output);
             outputs += output;
         }
