@@ -12,8 +12,8 @@ compressAndReportResults = async () => {
             const compressedFile = await jpegasus.compress(file, {
                 quality
             });
-            const compressedQuality = Math.round(compressedFile.size / file.size);
-            const output = `${quality}, ${compressedQuality}, ${file.size}\n`;
+            const compressedQuality = Math.round((compressedFile.size / file.size) * 100) / 100;
+            const output = `${compressedQuality}, ${file.size}, ${quality}\n`;
             console.log(output);
             outputs += output;
         }
