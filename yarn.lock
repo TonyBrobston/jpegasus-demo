@@ -1483,9 +1483,10 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-jpegasus@^1.9.52:
-  version "1.9.52"
-  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.9.52.tgz#5c52d6e0e7dec7533f71b310e70c15cefd96a92e"
+jpegasus@^1.9.55:
+  version "1.9.55"
+  resolved "https://registry.npmjs.org/jpegasus/-/jpegasus-1.9.55.tgz#bf7d7e718d95299c8a7d27b0f3b879c8d3f3bb0e"
+  integrity sha512-oDWVitIu2hyoHl69VfBnGTBCVELmkOhnn8t1AKTc1t/KX7lKrb5Iqvnp4ZM5CZMiOYp5EVyS3MaFZGAp2ki/qA==
 
 json-parse-better-errors@^1.0.2:
   version "1.0.2"
