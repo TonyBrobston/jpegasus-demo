@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: './src/js/main.js',
@@ -21,6 +22,9 @@ module.exports = {
                 from: 'src/img/',
                 to: './img'
             }
-        ])
+        ]),
+        new webpack.ProvidePlugin({
+            Promise: 'es6-promise-promise',
+        })
     ]
 };
