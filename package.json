@@ -29,6 +29,7 @@
   "dependencies": {},
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",
+    "es6-promise-promise": "^1.0.0",
     "gh-pages": "^2.0.1",
     "jpegasus": "^1.9.55",
     "webpack": "^4.28.3",
