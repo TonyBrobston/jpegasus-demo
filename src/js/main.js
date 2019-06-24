@@ -9,14 +9,14 @@ compressAndReportResults = async () => {
         const maxWidth = parseFloat(getValue('maxWidthSelector'));
         const quality = parseFloat(getValue('qualitySelector'));
 
-        const compressedFile = await jpegasus.compress(file, {
+        jpegasus.compress(file, {
             maxHeight,
             maxWidth,
             quality
+        }).then((compressedFile) => {
+            setCompressedDetails(compressedFile);
+            setFileObjectUrl(compressedFile);
         });
-
-        setCompressedDetails(compressedFile);
-        setFileObjectUrl(compressedFile);
     }
 };
 
