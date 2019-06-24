@@ -1,6 +1,6 @@
 const jpegasus = require('jpegasus');
 
-compressAndReportResults = () => {
+compressAndReportResults = async () => {
     const file = document.getElementById('imageInput').files[0];
 
     if (file) {
@@ -9,14 +9,14 @@ compressAndReportResults = () => {
         const maxWidth = parseFloat(getValue('maxWidthSelector'));
         const quality = parseFloat(getValue('qualitySelector'));
 
-        jpegasus.compress(file, {
+        const compressedFile = await jpegasus.compress(file, {
             maxHeight,
             maxWidth,
             quality
-        }).then((compressedFile) => {
-            setCompressedDetails(compressedFile);
-            setFileObjectUrl(compressedFile);
         });
+
+        setCompressedDetails(compressedFile);
+        setFileObjectUrl(compressedFile);
     }
 };
 
