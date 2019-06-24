@@ -1,6 +1,5 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
     entry: './src/js/main.js',
@@ -22,9 +21,20 @@ module.exports = {
                 from: 'src/img/',
                 to: './img'
             }
-        ]),
-        new webpack.ProvidePlugin({
-            Promise: 'es6-promise-promise',
-        })
-    ]
+        ])
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    }
 };
