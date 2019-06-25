@@ -2,7 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: ['regenerator-runtime/runtime', 'core-js/stable', './src/js/main.js'],
+    entry: ['babel-regenerator-runtime', 'babel-polyfill', './src/js/main.js'],
     output: {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, 'dist')
