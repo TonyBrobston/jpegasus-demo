@@ -14,6 +14,10 @@ module.exports = {
                 to: '.'
             },
             {
+                from: 'src/manifest.json',
+                to: '.'
+            },
+            {
                 from: 'src/js/sw.js',
                 to: '.'
             },
