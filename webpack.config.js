@@ -18,6 +18,10 @@ module.exports = {
                 to: '.'
             },
             {
+                from: 'src/js/cache-polyfill.js',
+                to: '.'
+            },
+            {
                 from: 'src/js/sw.js',
                 to: '.'
             },
