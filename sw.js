@@ -1,4 +1,4 @@
-importScripts('/cache-polyfill.js');
+importScripts('/jpegasus-demo/cache-polyfill.js');
 
 self.addEventListener('install', function(e) {
     e.waitUntil(
