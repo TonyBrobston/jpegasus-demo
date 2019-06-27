@@ -15,7 +15,7 @@ module.exports = {
             },
             {
                 from: 'src/js/sw.js',
-                to: './js'
+                to: '.'
             },
             {
                 from: 'src/css/styles.css',
