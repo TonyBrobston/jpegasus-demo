@@ -4,11 +4,11 @@ self.addEventListener('install', function(e) {
     e.waitUntil(
         caches.open('jpegasus').then(function(cache) {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/css/styles.css',
-                '/img/jpegasus-logo-reversed.png',
-                '/js/main.js'
+                '/jpegasus-demo/',
+                '/jpegasus-demo/index.html',
+                '/jpegasus-demo/css/styles.css',
+                '/jpegasus-demo/img/jpegasus-logo-reversed.png',
+                '/jpegasus-demo/js/main.js'
             ]);
         })
     );
