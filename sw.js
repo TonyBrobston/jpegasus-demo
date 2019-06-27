@@ -9,7 +9,7 @@ self.addEventListener('install', function(e) {
                 '/index.html',
                 '/css/styles.css',
                 '/img/jpegasus-logo.png',
-                'jpegasus-logo-reversed.png',
+                '/img/jpegasus-logo-reversed.png',
                 '/js/main.js'
             ]);
         })
