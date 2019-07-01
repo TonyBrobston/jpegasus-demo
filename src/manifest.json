@@ -11,6 +11,6 @@
   "manifest_version": 1,
   "start_url": "/jpegasus-demo/",
   "display": "standalone",
-  "theme_color": "#2196F3",
-  "background_color": "#2196F3"
+  "theme_color": "#2A66FF",
+  "background_color": "#2A66FF"
 }
