@@ -1,9 +1,11 @@
 {
   "name": "Jpegasus Demo",
-  "short_name": "Jpegasus Demo",
+  "short_name": "Jpegasus",
   "description": "This repo is the most simplistic implementation of Jpegasus hosted on GitHub Pages.",
   "version": "1.0.0",
   "manifest_version": 1,
   "start_url": "/jpegasus-demo/",
-  "display": "standalone"
+  "display": "standalone",
+  "theme_color": "#2196F3",
+  "background_color": "#2196F3"
 }
