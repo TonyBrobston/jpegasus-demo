@@ -1,16 +1,23 @@
 {
   "name": "Jpegasus Demo",
   "short_name": "Jpegasus",
-  "icons": [{
-    "src": "/jpegasus-demo/img/jpegasus-logo-192.png",
-    "type": "image/png",
-    "sizes": "192x192"
-  }],
+  "icons": [
+    {
+      "src": "/jpegasus-demo/img/jpegasus-logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/jpegasus-demo/img/jpegasus-logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
   "description": "This repo is the most simplistic implementation of Jpegasus hosted on GitHub Pages.",
   "version": "1.0.0",
   "manifest_version": 1,
   "start_url": "/jpegasus-demo/",
   "display": "standalone",
   "theme_color": "#2A66FF",
-  "background_color": "#2A66FF"
+  "background_color": "#FFFFFF"
 }
