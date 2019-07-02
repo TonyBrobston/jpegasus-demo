@@ -51,7 +51,7 @@
 								<td id="originType">—</td>
 							</tr>
 							<tr>
-								<td><strong>JPEGasus</strong></td>
+								<td><strong>Jpegasus</strong></td>
 								<td id="compressedSize">—</td>
 								<td id="compressedType">—</td>
 							</tr>
@@ -67,17 +67,5 @@
 		</div>
 	</div>
 	<script src="js/main.js"></script>
-	<script>
-		if('serviceWorker' in navigator) {
-			navigator.serviceWorker
-					.register('/jpegasus-demo/sw.js')
-					.then(function() {
-						console.log("Service Worker Registered");
-					})
-					.catch(function() {
-						console.log("Service Worker was NOT Registered");
-					});
-		}
-	</script>
 </body>
 </html>
