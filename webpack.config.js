@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 module.exports = {
     entry: ['regenerator-runtime', 'babel-polyfill', './src/js/main.js'],
@@ -22,10 +23,6 @@ module.exports = {
                 to: '.'
             },
             {
-                from: 'src/js/sw.js',
-                to: '.'
-            },
-            {
                 from: 'src/css/styles.css',
                 to: './css'
             },
@@ -33,7 +30,8 @@ module.exports = {
                 from: 'src/img/',
                 to: './img'
             }
-        ])
+        ]),
+        new OfflinePlugin()
     ],
     module: {
         rules: [

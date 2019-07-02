@@ -1,3 +1,4 @@
+require('offline-plugin/runtime').install();
 const jpegasus = require('jpegasus');
 
 compressAndReportResults = async () => {
