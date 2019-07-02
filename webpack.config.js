@@ -19,10 +19,6 @@ module.exports = {
                 to: '.'
             },
             {
-                from: 'src/js/cache-polyfill.js',
-                to: '.'
-            },
-            {
                 from: 'src/css/styles.css',
                 to: './css'
             },
