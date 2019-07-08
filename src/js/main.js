@@ -8,12 +8,14 @@ compressAndReportResults = async () => {
         setOriginalDetails(file);
         const maxHeight = parseFloat(getValue('maxHeightSelector'));
         const maxWidth = parseFloat(getValue('maxWidthSelector'));
+        const scaleImageBy = parseFloat(getValue('scaleImageBy'));
         const quality = parseFloat(getValue('qualitySelector'));
 
         const compressedFile = await jpegasus.compress(file, {
             maxHeight,
             maxWidth,
-            quality
+            quality,
+            scaleImageBy
         });
 
         setCompressedDetails(compressedFile);
@@ -64,6 +66,18 @@ const fillMaxWidthSelectorOptions = () => {
     });
 };
 
+const fillScaleImageByOptions = () => {
+    const maxHeightSelector = document.getElementById('scaleImageBy');
+
+    fillSelectorOptionsAndSetDefault(maxHeightSelector, {
+        decreaseBy: 1,
+        defaultValue: 1,
+        divideBy: 100,
+        maximum: 200,
+        minimum: 1
+    });
+};
+
 const fillQualitySelectorOptions = () => {
     const qualitySelector = document.getElementById('qualitySelector');
 
@@ -93,5 +107,6 @@ const fillSelectorOptionsAndSetDefault = (selector, {decreaseBy, divideBy, minim
 window.onload = () => {
     fillMaxHeightSelectorOptions();
     fillMaxWidthSelectorOptions();
+    fillScaleImageByOptions();
     fillQualitySelectorOptions();
 };

@@ -2198,10 +2198,10 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-jpegasus@^1.10.1:
-  version "1.10.1"
-  resolved "https://registry.npmjs.org/jpegasus/-/jpegasus-1.10.1.tgz#9e5ad4beed3b7749d85d37f87fa4c4149c98d142"
-  integrity sha512-e5I2jwWEH53Q4p7FpQlRsmcIwmVACbVouMurTKTb63N2onnqfYRy9G3ZvWEqw3Qu1RSR23N5d0jsIAt8gYokIA==
+jpegasus@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.npmjs.org/jpegasus/-/jpegasus-1.11.0.tgz#598701b6ff19437dab57c7a9461025fb524fb4f0"
+  integrity sha512-1MVsSX7CaXuXm0IM4azieO/ETj1uPbp5THE0hWrAv1EBEAF4ZKa7OE2w8yFFYMMVf5XA2rBu1aRSv9oeVOX/5g==
 
 js-levenshtein@^1.1.3:
   version "1.1.6"
