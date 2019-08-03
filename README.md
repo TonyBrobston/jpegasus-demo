@@ -9,7 +9,6 @@ This repo is the most simplistic implementation of Jpegasus.
 ## To run locally:
 ```
 yarn build
-cd dist
 python -m SimpleHTTPServer 3000
 ```
-* Navigate to http://localhost:3000/
+* Navigate to http://localhost:3000/jpegasus-demo
