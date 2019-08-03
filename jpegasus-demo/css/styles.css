@@ -92,7 +92,7 @@ header select {
 	width: 100%;
 }
 header input[type="file"]{
-	font-size: 14px;
+	font-size: 16px;
 }
 header input[type="button"]{
 	background-color: #2a66ff;
@@ -169,4 +169,8 @@ main span {
 		vertical-align: middle;
 /*		width: 100%;*/
 	}
+}
+
+{
+	font-size: 50px !important;
 }

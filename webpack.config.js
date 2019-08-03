@@ -6,7 +6,7 @@ module.exports = {
     entry: ['regenerator-runtime', 'babel-polyfill', './src/js/main.js'],
     output: {
         filename: 'js/[name].js',
-        path: path.resolve(__dirname, 'jpegasus-demo')
+        path: path.resolve(__dirname, 'dist')
     },
     plugins: [
         new CopyWebpackPlugin([
