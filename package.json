@@ -8,7 +8,7 @@
     "dev": "yarn build && http-server -p 3000",
     "dev:ssl": "yarn build && http-server -p 3000 -S -K ssl/local.dev.key -C ssl/local.dev.crt",
     "build": "rm -rf jpegasus-demo && webpack -p",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lighthouse https://localhost:3000/jpegasus-demo/ --view"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "gh-pages": "^2.0.1",
     "http-server": "^0.11.1",
     "jpegasus": "^1.11.1",
+    "lighthouse": "^5.2.0",
     "offline-plugin": "^5.0.7",
     "regenerator-runtime": "^0.13.2",
     "webpack": "^4.35.0",
