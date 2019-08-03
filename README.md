@@ -8,7 +8,15 @@ This repo is the most simplistic implementation of Jpegasus.
 
 ## To run locally:
 ```
-yarn build
-python -m SimpleHTTPServer 3000
+yarn dev
 ```
 * Navigate to http://localhost:3000/jpegasus-demo
+
+* How to run locally with https/ssl:
+    - Setup a certificate: https://github.com/kingkool68/generate-ssl-certs-for-local-development
+    - Move key to:
+        - `ssl/local.dev.key`
+    - Move cert to:
+        - `ssl/local.dev.crt`
+    - Run:
+        - `yarn dev:ssl` 
