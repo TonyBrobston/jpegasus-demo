@@ -4,7 +4,7 @@
   "description": "This repo is the most simplistic implementation of Jpegasus hosted on GitHub Pages.",
   "main": "index.js",
   "scripts": {
-    "start": "yarn build && ( cd dist && python -m http.server 3000 )",
+    "start": "yarn build && (cd dist && serve)",
     "deploy": "yarn build && gh-pages -d dist",
     "build": "rm -rf dist && webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -39,6 +39,7 @@
     "jpegasus": "^1.11.0",
     "offline-plugin": "^5.0.7",
     "regenerator-runtime": "^0.13.2",
+    "serve": "^11.2.0",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5"
   }

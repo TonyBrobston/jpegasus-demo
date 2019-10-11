@@ -7,9 +7,4 @@ This repo is the most simplistic implementation of Jpegasus.
 * [npm](https://www.npmjs.com/package/jpegasus)
 
 ## To run locally:
-```
-yarn build
-cd dist
-python -m SimpleHTTPServer 3000
-```
-* Navigate to http://localhost:3000/
+`yarn start` and then navigate to http://localhost:5000/
