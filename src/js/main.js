@@ -10,11 +10,14 @@ compressAndReportResults = async () => {
         const maxWidth = parseFloat(getValue('maxWidthSelector'));
         const scaleImageBy = parseFloat(getValue('scaleImageBy'));
         const quality = parseFloat(getValue('qualitySelector'));
+        const returnOriginalIfCompressedFileIsLarger =
+          'true' === getValue('returnOriginalIfCompressedFileIsLargerSelector');
 
         const compressedFile = await jpegasus.compress(file, {
             maxHeight,
             maxWidth,
             quality,
+            returnOriginalIfCompressedFileIsLarger,
             scaleImageBy
         });
 
