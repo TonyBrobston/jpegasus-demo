@@ -1,11 +1,14 @@
 require('offline-plugin/runtime').install();
-const jpegasus = require('jpegasus');
+const {compress} = require('jpegasus');
+const {readOrientationCode} = require('@ginpei/exif-orientation');
 
 compressAndReportResults = async () => {
     const file = document.getElementById('imageInput').files[0];
 
     if (file) {
-        setOriginalDetails(file);
+        const originalOrientation = await readOrientationCode(file);
+        setOriginalDetails(file, originalOrientation);
+
         const maxHeight = parseFloat(getValue('maxHeightSelector'));
         const maxWidth = parseFloat(getValue('maxWidthSelector'));
         const scaleImageBy = parseFloat(getValue('scaleImageBy'));
@@ -14,8 +17,7 @@ compressAndReportResults = async () => {
           'true' === getValue('returnOriginalIfCompressedFileIsLargerSelector');
         const returnOriginalOnFailure =
           'true' === getValue('returnOriginalOnFailureSelector');
-
-        const compressedFile = await jpegasus.compress(file, {
+        const compressedFile = await compress(file, {
             maxHeight,
             maxWidth,
             quality,
@@ -23,20 +25,22 @@ compressAndReportResults = async () => {
             returnOriginalOnFailure,
             scaleImageBy
         });
-
-        setCompressedDetails(compressedFile);
+        const compressedOrientation = await readOrientationCode(compressedFile);
+        setCompressedDetails(compressedFile, compressedOrientation);
         setFileObjectUrl(compressedFile);
     }
 };
 
-const setOriginalDetails = (file) => {
+const setOriginalDetails = (file, originalOrientation) => {
     document.getElementById('originalSize').innerHTML = (file.size / 1024).toFixed(2);
-    document.getElementById('originType').innerHTML = file.type;
+    document.getElementById('originalType').innerHTML = file.type;
+    document.getElementById('originalOrientation').innerHTML = originalOrientation;
 };
 
-const setCompressedDetails = (file) => {
+const setCompressedDetails = (file, compressedOrientation) => {
     document.getElementById('compressedSize').innerHTML = (file.size / 1024).toFixed(2);
     document.getElementById('compressedType').innerHTML = file.type;
+    document.getElementById('compressedOrientation').innerHTML = compressedOrientation;
 };
 
 const setFileObjectUrl = (compressedFile) => {
