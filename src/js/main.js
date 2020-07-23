@@ -1,12 +1,11 @@
 require('offline-plugin/runtime').install();
-const {compress} = require('jpegasus');
-const {readOrientationCode} = require('@ginpei/exif-orientation');
+const {compress, determineOrientation} = require('jpegasus');
 
 compressAndReportResults = async () => {
     const file = document.getElementById('imageInput').files[0];
 
     if (file) {
-        const originalOrientation = await readOrientationCode(file);
+        const originalOrientation = await determineOrientation(file);
         setOriginalDetails(file, originalOrientation);
 
         const maxHeight = parseFloat(getValue('maxHeightSelector'));
@@ -25,7 +24,7 @@ compressAndReportResults = async () => {
             returnOriginalOnFailure,
             scaleImageBy
         });
-        const compressedOrientation = await readOrientationCode(compressedFile);
+        const compressedOrientation = await determineOrientation(compressedFile);
         setCompressedDetails(compressedFile, compressedOrientation);
         setFileObjectUrl(compressedFile);
     }
