@@ -1,4 +1,12 @@
-require('offline-plugin/runtime').install();
+const runtime = require('offline-plugin/runtime');
+runtime.install({
+  onUpdateReady: () => {
+    runtime.applyUpdate();
+  },
+  onUpdated: () => {
+    window.location.reload();
+  }
+});
 const {compress, determineOrientation} = require('jpegasus');
 
 compressAndReportResults = async () => {

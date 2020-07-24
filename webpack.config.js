@@ -27,7 +27,11 @@ module.exports = {
                 to: './img'
             }
         ]),
-        new OfflinePlugin()
+        new OfflinePlugin({
+          ServiceWorker: {
+            events: true
+          }
+        })
     ],
     module: {
         rules: [
