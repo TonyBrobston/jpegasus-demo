@@ -24,7 +24,10 @@ compressAndReportResults = async () => {
           'true' === getValue('returnOriginalIfCompressedFileIsLargerSelector');
         const returnOriginalOnFailure =
           'true' === getValue('returnOriginalOnFailureSelector');
+        const fixImageOrientation =
+          'true' === getValue('fixImageOrientation');
         const compressedFile = await compress(file, {
+            fixImageOrientation,
             maxHeight,
             maxWidth,
             quality,
