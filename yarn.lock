@@ -2666,10 +2666,10 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
-jpegasus@^1.15.1:
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.15.1.tgz#04d10dd35aabd6629346e4a2454a999882bf9f4c"
-  integrity sha512-+w8kjQJiehSqb/KyVWGwdmX19Vi3L9OuPFXKLSHJHuus9ZkpcSxLRr1TLufabcfc3izgFmROAPCPKo07sNTE+A==
+jpegasus@^1.15.2:
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/jpegasus/-/jpegasus-1.15.2.tgz#a545059ec52d35e153bf6da750c83a9df5e834df"
+  integrity sha512-aqM3RBXWALqszjDUyxH0NE4ra1vBH5gTPTXtOK8MLdJ+7QwUo15yvLZuVk2QGdz6K+aVi2JZHO6+B0rgKSfG2Q==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
