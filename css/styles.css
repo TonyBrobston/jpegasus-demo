@@ -91,6 +91,10 @@ header select {
 	display: block;
 	width: 100%;
 }
+header input[type="text"] {
+	display: block;
+	width: calc(100% - 8px);
+}
 header input[type="file"]{
 	font-size: 14px;
 }
