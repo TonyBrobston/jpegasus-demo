@@ -22,14 +22,18 @@ compressAndReportResults = async () => {
         const returnOriginalIfCompressedFileIsLarger = 'true' === getValue('returnOriginalIfCompressedFileIsLargerSelector');
         const returnOriginalOnFailure = 'true' === getValue('returnOriginalOnFailureSelector');
         const fixImageOrientation = 'true' === getValue('fixImageOrientation');
+        const preserveFileType = 'true' === getValue('preserveFileType');
+        const transparencyFillColor = getValue('transparencyFillColor');
         const compressedFile = await compress(file, {
             fixImageOrientation,
             maxHeight,
             maxWidth,
+            preserveFileType,
             quality,
             returnOriginalIfCompressedFileIsLarger,
             returnOriginalOnFailure,
-            scaleImageBy
+            scaleImageBy,
+            transparencyFillColor,
         });
         setCompressedDetails(compressedFile);
         setFileObjectUrl(compressedFile);
